@@ -199,11 +199,11 @@ class MiraklClient
     {
         $res = [];
         foreach (array_chunk($commercialIds, 100) as $chunk) {
-            $res = array_merge($res, $this->paginateByOffset('/api/orders', ['commercial_ids' => implode(',', $chunk)], 'orders'));
+            $res = array_merge($res, $this->paginateByOffset('/api/orders', ['order_references_for_customer' => implode(',', $chunk)], 'orders'));
         }
         $res = $this->arraysToObjects($res, MiraklProductOrder::class);
 
-        return $this->objectsToMap($res, 'getCommercialId', 'getId');
+        return $this->objectsToMap($res, 'getOrderReferenceForCustomer', 'getId');
     }
 
     // PA11

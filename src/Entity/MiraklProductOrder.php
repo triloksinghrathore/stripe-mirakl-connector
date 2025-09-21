@@ -14,6 +14,11 @@ class MiraklProductOrder extends MiraklOrder
         return $this->order['commercial_id'];
     }
 
+    public function getOrderReferenceForCustomer(): string
+    {
+        return $this->order['references']['order_reference_for_customer'];
+    }
+
     public function getCreationDate(): string
     {
         return $this->order['created_date'];
@@ -45,7 +50,7 @@ class MiraklProductOrder extends MiraklOrder
             'STAGING',
             'WAITING_ACCEPTANCE',
             'WAITING_DEBIT',
-            'WAITING_DEBIT_PAYMENT',
+            'SHIPPING',
         ]);
     }
 

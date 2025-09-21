@@ -11,7 +11,7 @@ class MiraklProductPendingDebit extends MiraklPendingDebit
 
     public function getCommercialId(): string
     {
-        return $this->order['order_commercial_id'];
+        return strtok($this->order['order_commercial_id'],"-");
     }
 
     public function getCustomerId(): string

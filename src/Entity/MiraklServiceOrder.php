@@ -45,7 +45,7 @@ class MiraklServiceOrder extends MiraklOrder
             'WAITING_SCORING',
             'WAITING_ACCEPTANCE',
             'WAITING_DEBIT',
-            'WAITING_DEBIT_PAYMENT',
+            'SHIPPING',
         ]);
     }
 
